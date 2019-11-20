@@ -1,0 +1,15 @@
+
+{%extends 'HotelApp/base.html'%}
+
+{%block parent_block%}
+<center>
+  <h1>Login Form</h1>
+  
+<form method="post">
+{{form.as_p}}
+{%csrf_token%}
+<input type="submit" value="Login" />
+
+</form>
+</center>
+{%endblock%}

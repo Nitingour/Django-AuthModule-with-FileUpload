@@ -1,0 +1,43 @@
+
+
+{%extends 'HotelApp/base.html'%}
+
+{%block parent_block%}
+{%if msg%}
+<div class="alert alert-success alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>{{msg}}</strong>
+</div>
+{%endif%}
+
+
+<h1>Add New Employee Form</h1>
+
+<form  method="POST" enctype="multipart/form-data">
+{{uform.as_p}}
+{%csrf_token%}
+   <input type="submit" value="Save"/>
+</form>
+
+
+{%if images %}
+<table class="table table-hover">
+  <tr><th>ID</th><th>File Name</th><th>File</th><th>Author</th><th>Upload Date</th></tr>
+ {%for data in images%}
+  <tr>
+    <td>{{data.id}}</td>
+    <td>{{data.name}}</td>
+    <td><img src="{{data.pic.url}}" height="50" width="50"/></td>
+    <td>{{data.author}}</td>
+    <td>{{data.uploaddate | timesince}}</td>
+  </tr>
+ {%endfor%}
+</table>
+
+{%else%}
+<h2>No Data Found...</h2>
+{%endif%}
+
+
+
+{%endblock%}

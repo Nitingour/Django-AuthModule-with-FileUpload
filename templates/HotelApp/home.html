@@ -1,0 +1,24 @@
+
+
+{%extends 'HotelApp/base.html'%}
+
+{%block parent_block%}
+
+<h1>Employee Deatials</h1>
+
+{%if emplist %}
+<table class="table table-hover">
+  <tr><th>EID</th><th>EName</th><th>Salary</th></tr>
+ {%for emp in emplist%}
+  <tr>
+    <td>{{emp.eid}}</td>
+    <td>{{emp.ename}}</td>
+    <td>{{emp.salary}}</td>
+  </tr>
+ {%endfor%}
+</table>
+
+{%else%}
+<h2>No Data Found...</h2>
+{%endif%}
+{%endblock%}

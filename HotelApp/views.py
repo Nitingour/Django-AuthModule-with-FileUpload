@@ -56,3 +56,10 @@ def upload(request):
     images=Upload.objects.all().order_by('-uploaddate')
     mydict['images']=images
     return render(request,"HotelApp/uploadimage.html",context=mydict)
+
+def deleteEmp(request,id):
+    e=Employee.objects.get(id=id)
+    e.delete()
+    emplist=Employee.objects.all()
+    mydict={'emplist':emplist,'msg':'Data Deleted'}
+    return render(request,"HotelApp/home.html",context=mydict)

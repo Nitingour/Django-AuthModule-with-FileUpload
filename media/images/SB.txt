@@ -1,0 +1,33 @@
+Application Sequence Number/User Id: NVS389342
+ 	
+Password: 1992690
+
+
+
+https://www.dineshonjava.com/spring-boot-interview-questions-and-answers/
+https://dzone.com/articles/top-20-spring-mvc-interview-questions-and-answers
+====================================================
+Application context vs Beanfactory
+DI vs IOC
+Setter vs Constructor
+What is Autowiring?How many types of autowiring is there?
+Usecase:
+If two bean are Injecting the same Type then we getting ambiguity problem and how to resolve it?
+=======================================================
+
+Spring Boot
+---------------
+What does @EnableAutoConfiguration do? What about @SpringBootApplication?
+What does the InternalResourceViewResolver do?
+What is a Spring Boot starter POM? Why is it useful?
+Spring Boot supports both Java properties and YML files. Would you recognize and understand them if you saw them?
+Can you control logging with Spring Boot? How?
+What embedded containers does Spring Boot support?
+How to reload my changes on Spring Boot without having to restart server?
+What is Actuator in Spring Boot?
+How to run Spring boot application to custom port?
+How to implement security for Spring boot application?
+What is the configuration file name used by Spring Boot?
+How to implement Spring web using Spring boot?
+What are some of the valid return types of a controller method? 
+How to configure database using Spring boot?

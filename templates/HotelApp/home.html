@@ -5,15 +5,24 @@
 {%block parent_block%}
 
 <h1>Employee Deatials</h1>
-
+{%if msg%}
+<div class="alert alert-success alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>{{msg}}</strong>
+</div>
+{%endif%}
 {%if emplist %}
+
 <table class="table table-hover">
-  <tr><th>EID</th><th>EName</th><th>Salary</th></tr>
+  <tr><th>ID</th><th>EID</th><th>EName</th><th>Salary</th></tr>
  {%for emp in emplist%}
   <tr>
+  <td>{{emp.id}}</td>
     <td>{{emp.eid}}</td>
     <td>{{emp.ename}}</td>
     <td>{{emp.salary}}</td>
+    <td><a href="/delete/{{emp.id}}" class="glyphicon glyphicon-remove" onclick="return confirm('Do you realy want to delete?')"></a></td>
+
   </tr>
  {%endfor%}
 </table>

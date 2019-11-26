@@ -28,5 +28,7 @@ urlpatterns = [
     path('signup/',views.signup),
     path('upload/',views.upload),
     path('delete/<id>',views.deleteEmp),
+    path('update/<id>',views.updateEmp),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

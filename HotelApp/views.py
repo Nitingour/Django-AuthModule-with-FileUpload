@@ -63,3 +63,14 @@ def deleteEmp(request,id):
     emplist=Employee.objects.all()
     mydict={'emplist':emplist,'msg':'Data Deleted'}
     return render(request,"HotelApp/home.html",context=mydict)
+
+def updateEmp(request,id):
+    emp=Employee.objects.get(id=id)
+    if(request.method=='GET'):
+        return render(request,'HotelApp/updateEmpform.html',context={'emp':emp})
+    if(request.method=='POST'):
+        emp=EmployeeForm(request.POST,instance=emp)
+        emp.save()
+        emplist=Employee.objects.all()
+        mydict={'emplist':emplist,'msg':'Data Updated'}
+        return render(request,"HotelApp/home.html",context=mydict)

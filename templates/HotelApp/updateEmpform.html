@@ -1,0 +1,25 @@
+
+
+
+{%extends 'HotelApp/base.html'%}
+
+{%block parent_block%}
+
+<h1>Update Employee Deatials</h1>
+{%if msg%}
+<div class="alert alert-success alert-dismissible">
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  <strong>{{msg}}</strong>
+</div>
+{%endif%}
+
+<form  method="POST">
+<p><label for="id_eid"></label> <input type="hidden" value={{emp.id}} name="eid" required id="id_eid"></p>
+<p><label for="id_eid">Eid:</label> <input type="number" value='{{emp.eid}}' name="eid" required id="id_eid"></p>
+<p><label for="id_ename">Ename:</label> <input type="text" value='{{emp.ename}}' name="ename" maxlength="30" required id="id_ename"></p>
+<p><label for="id_salary">Salary:</label> <input type="number" value={{emp.salary}} name="salary" step="any" required id="id_salary"></p>
+   <input type="submit" value="Update" onclick="return confirm('update???')" />
+{%csrf_token%}
+
+</form>
+{%endblock%}
